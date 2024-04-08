@@ -1,0 +1,3 @@
+when a folder name is wrapper with parentheses,
+the folder is removed from routing and internal folder
+can be directly accessed by their names.
