@@ -1,9 +1,19 @@
 import { notFound } from "next/navigation";
 
-const ReviewDetails = ({params}:any) => {
+function getRandomInt(count: number) {
+    return Math.floor(Math.random() * count)
+}
 
-    if(parseInt(params.review) > 1000){
+const ReviewDetails = ({ params }: any) => {
+
+    const random = getRandomInt(2)
+
+    if (parseInt(params.review) > 1000) {
         notFound()
+    }
+
+    if(random === 1){
+        throw new Error('error load')
     }
 
     return (

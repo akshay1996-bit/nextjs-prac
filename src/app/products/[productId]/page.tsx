@@ -1,12 +1,29 @@
-interface Iparams {
-    productId: string
+import { Metadata } from "next"
+
+type Props = {
+    params: {
+        productId: string
+    }
+}
+// Dynamic metadata
+// name of func should be same
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+    //sync
+    // return {
+    //     title: `Product ${params.productId}`
+    // }
+    //async
+    const title = await new Promise(resolve => {
+        setTimeout(() => {
+            resolve(`android ${params.productId}`)
+        }, 100)
+    })
+    return {
+        title: `Product ${title}`
+    }
 }
 
-interface Iprops {
-    params: Iparams
-}
-
-const ProductsDetail = (props: Iprops) => {
+const ProductsDetail = (props: Props) => {
     const {
         params
     } = props
