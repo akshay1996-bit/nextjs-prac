@@ -15,17 +15,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <header style={{
+        {/* <header style={{
           backgroundColor: 'lightgreen',
           padding: '1rem'
         }}>
           Header
-        </header>
+        </header> */}
         {children}
-        <footer style={{
+        {/* <footer style={{
           backgroundColor: 'lightblue',
           padding: '1rem'
-        }}>Footer</footer>
+        }}>Footer</footer> */}
       </body>
 
     </html>
